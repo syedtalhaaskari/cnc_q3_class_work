@@ -1,0 +1,36 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.loader, .error {
+	width: 100vw;
+	height: 100vh;
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+
+.error {
+	flex-direction: column;
+	gap: 10px;
+}
+
+button {
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid white;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+button:hover {
+	scale: 1.05;
+	background: #fff;
+	color: #333;
+}
