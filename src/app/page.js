@@ -1,17 +1,12 @@
-"use client"
-
-import { useState } from 'react'
+import Link from "next/link";
 
 export default function Home() {
-	const [count, setCount] = useState(0)
-
-	// if (true) {
-	// 	throw new Error("Error Occured");
-	// }
-
 	return (
-		<main>
-			<button onClick={() => setCount(count + 1)}>Count {count}</button>
-		</main>
+		<ul>
+			<li><Link href={"/"}>Home</Link></li>
+			<li><Link href={"/portfolio"}>Portfolio</Link></li>
+			<li><Link href={"/portfolio/nhaps"}>Nhaps</Link></li>
+			<li><Link href={"/portfolio/hkk"}>Hkk</Link></li>
+		</ul>
 	)
 }
