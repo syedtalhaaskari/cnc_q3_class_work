@@ -1,12 +1,21 @@
-import Link from "next/link";
+const getStudentsList = async () => {
+	const students = await fetch("http://localhost:3000/api/students");
 
-export default function Home() {
+	return await students.json();
+}
+
+export default async function Home() {
+	const students = await getStudentsList();
+
+	console.log({ students });
+
 	return (
-		<ul>
-			<li><Link href={"/"}>Home</Link></li>
-			<li><Link href={"/portfolio"}>Portfolio</Link></li>
-			<li><Link href={"/portfolio/nhaps"}>Nhaps</Link></li>
-			<li><Link href={"/portfolio/hkk"}>Hkk</Link></li>
-		</ul>
+		<div className="container">
+			<ul>
+				{students?.students?.map((student, i) => (
+					<li key={i}>{student}</li>
+				))}
+			</ul>
+		</div>
 	)
 }
