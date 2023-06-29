@@ -3,7 +3,7 @@
 
 const Brands = ({ params }) => {
     return (
-        <div>{params.brands}</div>
+        <div className="container">{params.brands}</div>
     )
 }
 
