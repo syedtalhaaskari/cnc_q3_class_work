@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Salman",
+            "email": "salman@gmail.com",
+            "isStudent": false
+        },
+        {
+            "id": 2,
+            "name": "Talha",
+            "email": "talha@gmail.com",
+            "isStudent": true
+        },
+        {
+            "id": 3,
+            "name": "Taha",
+            "email": "taha@gmail.com",
+            "isStudent": false
+        },
+        {
+            "id": 4,
+            "name": "TT",
+            "email": "TT",
+            "isStudent": false
+        }
+    ]
+}

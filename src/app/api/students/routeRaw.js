@@ -1,24 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs"
-import path from "path"
-
-const dbFile = path.join(process.cwd(), 'db.json');
-// process.cwd(); Current Working Directory It shows the absolute path of file
-
-const getData = () => {
-    const data = fs.readFileSync(dbFile);
-    return JSON.parse(data);
-}
-
-const updateData = (params) => {
-    fs.writeFileSync(dbFile, JSON.stringify(params, null, 4));
-    return params;
-}
-
-console.log(getData(), "Data");
+import data from "./data.json"
 
 export const GET = async () => {
-    return NextResponse.json({ students: getData() })
+    console.log({ data });
+    return NextResponse.json({ students: data })
 }
 
 export const POST = async (req) => {
@@ -33,16 +18,14 @@ export const POST = async (req) => {
             throw new Error("Email is mandatory");
         }
         console.log({ reqBody });
-        const data = getData();
 
         data.data.push({
-            id: data.data.length + 1,
+            id: data.length + 1,
             name: reqBody.name,
             email: reqBody.email,
             isStudent: true
         });
 
-        updateData(data);
         return NextResponse.json({ students: data })
     } catch (err) {
         console.log("Error ===> ", err)
@@ -64,8 +47,6 @@ export const PUT = async (req) => {
         }
         console.log({ reqBody });
 
-        const data = getData();
-
         const ind = data.data.findIndex(item => item.id === +id);
         data.data[ind] = {
             id: id,
@@ -73,7 +54,6 @@ export const PUT = async (req) => {
             email: reqBody.email,
             isStudent: reqBody.isStudent,
         }
-        updateData(data);
 
         return NextResponse.json({ students: data })
     } catch (err) {
@@ -88,17 +68,20 @@ export const PATCH = async (req) => {
     const id = req.nextUrl.searchParams.get("id");
 
     try {
+        console.log("ID", id);
+
         const reqBody = await req.json();
 
-        const data = getData();
+        console.log({ reqBody });
 
         const ind = data.data.findIndex(item => item.id === +id);
+        console.log({ ind });
         data.data[ind] = {
             ...data.data[ind],
             ...reqBody,
         }
 
-        updateData(data);
+        console.log("DDDD ", data)
 
         return NextResponse.json({ students: data })
     } catch (err) {
@@ -113,16 +96,12 @@ export const DELETE = async (req) => {
     const id = req.nextUrl.searchParams.get("id");
 
     try {
-        const data = getData();
 
-        if (id >= data.data.length) {
+        if (id >= data.length) {
             throw new Error("Details Not Available is mandatory");
         }
-
         const ind = data.data.findIndex(item => item.id === +id);
         data.data.splice(ind, 1);
-
-        updateData(data);
 
         return NextResponse.json({ students: data })
     } catch (err) {

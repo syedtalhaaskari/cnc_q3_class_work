@@ -1,3 +1,17 @@
+## 09th July 2023
+### API Types
+- GET => To get data
+- POST => To insert data
+- PUT => To update whole entry
+- PATCH => To update specific details of an entry
+- DELETE => To delete an entry
+
+#### Assignment:
+Authorization NextAuth
+POST PUT PATCH DELETE only runs when user is authorized
+use nextchat.ai for help
+
+## 25th June 2023
 globals.css 
 This is a global css file
 all the css will be applied to the whole project

@@ -7,6 +7,13 @@
 body {
 	background-color: #cdcdcd;
 	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.flex-1 {
+	flex-grow: 1;
 }
 
 .loader, .error {
@@ -27,7 +34,7 @@ body {
 button {
 	padding: 10px 15px;
 	border-radius: 10px;
-	border: 1px solid white;
+	border: 1px solid #333;
 	background: #333;
 	color: #fff;
 	cursor: pointer;
@@ -44,4 +51,16 @@ button:hover {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 20px 0;
+}
+
+.mb-3 {
+	margin-bottom: 10px;
+}
+
+.flex {
+	display: flex;
+}
+
+.align-center {
+	align-items: center;
 }

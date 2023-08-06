@@ -9,6 +9,8 @@ const Footer = () => {
 
     return (
         pathname !== "/about" ? <nav className={styles.navContainer}>
+            <div className="container">
+
             Footer
             {/* <ul className={styles.navbar + " container"}>
                 <li><Link className={`${styles.navLink} ${pathname === "/" && styles.active}`} href={"/"}>Home</Link></li>
@@ -16,6 +18,7 @@ const Footer = () => {
                 <li><Link className={`${styles.navLink} ${pathname === "/portfolio/nhaps" && styles.active }`} href={"/portfolio/nhaps"}>Nhaps</Link></li>
                 <li><Link className={`${styles.navLink} ${pathname === "/portfolio/hkk" && styles.active }`} href={"/portfolio/hkk"}>Hkk</Link></li>
             </ul> */}
+            </div>
         </nav> : <></>
     )
 }
