@@ -1,10 +1,16 @@
 {
-    "users": [
-        {
-            "_id": "830920189091390202",
-            "name": "Talha",
-            "email": "talha@gmail.com",
-            "password": "talha123"
-        }
-    ]
+  "users": [
+    {
+      "_id": "830920189091390202",
+      "name": "Talha",
+      "email": "talha@gmail.com",
+      "password": "talha123"
+    },
+    {
+      "_id": "AHtu4Plm$1wpcRv",
+      "name": "Askari",
+      "email": "askari@gmail.com",
+      "password": "$2a$10$2226UMIv15FBX7A/AQ3py.FqnZSUlMO91kd/o4CDWnbsy7GSByWSu"
+    }
+  ]
 }

@@ -1,3 +1,9 @@
+## 16th August 2023
+### Assignment
+zod
+express validator
+passwordjs
+
 ## 05th August 2023
 To initialize typeScript use command: tsc --init
 Use tsc -w to transpile TS Code automatically
